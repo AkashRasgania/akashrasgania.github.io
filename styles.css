@@ -1,1 +1,19 @@
+/* styles.css */
+
+/* Styles for desktop screens */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+}
+
+/* Styles for mobile screens */
+@media screen and (max-width: 600px) {
+    header {
+        padding: 10px;
+    }
+    .content section {
+        padding: 10px;
+    }
+}
 
