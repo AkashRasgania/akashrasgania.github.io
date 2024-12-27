@@ -24,17 +24,17 @@
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="../index.html" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" ><i class="fa-solid fa-blog">&ThickSpace;</i>Akash Rasgania</a>
+        <a class="navbar-brand" href="index.html" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" ><i class="fa-solid fa-blog">&ThickSpace;</i>Akash Rasgania</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="../index.html"><i class="fa fa-home" aria-hidden="true"></i>&ThickSpace; Home</a>
+                    <a class="nav-link" href="index.html"><i class="fa fa-home" aria-hidden="true"></i>&ThickSpace; Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../about.html"> <i class="fa-solid fa-address-card"></i>&ThickSpace; About</a>
+                    <a class="nav-link" href="about.html"> <i class="fa-solid fa-address-card"></i>&ThickSpace; About</a>
                 </li>
                
             </ul>
@@ -54,7 +54,7 @@
                   <hr>
                   <blockquote class="blockquote text-center">
                 
-                 <cite title="Source Title"><q>Detect. Alleviate. Investigate.</q></cite><br/><span style="font-family:cursive; font-size: small;">- Akash Rasgania</span>
+                 <cite title="Source Title"><q id="quote"></q></cite><br/><span style="font-family:cursive; font-size: small;">- Akash Rasgania</span>
                   
                   </blockquote>
                 </div>
@@ -64,11 +64,11 @@
             <div class="col-md-6 mt-3 overflow-auto">
                 <h2>Dark Web - A Visit To The Darkness</h2>
                 <p>Internet is a power, and with great power comes great responsibility. Safeguarding the internet is challenging task for the cybersecurity..</p>
-                <a href="../blog/blog1.html">Read more...</a>
+                <a href="blog/blog1.html">Read more...</a>
                 <hr>
                 <h2>Increased Scams on Social Media</h2>
-                <p>Coming soon..</p>
-                <a href="#">Read more...</a> 
+                <p>Social media is an integral part of our lives and has transformed how we communicate and interact with each other. It is used by almost every individual..</p>
+                <a href="blog/blog2.html">Read more...</a> 
                 <hr>
     
             </div>
@@ -110,5 +110,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script> 
+        function getquote()
+        {
+            var ary=["Detect. Alleviate. Investigate","Think. Click. Surf."]
+            
+            document.getElementById("quote").innerHTML = ary[ Math.floor(Math.random()*ary.length)]
+        }
+        getquote();
+    </script>
 </body>
 </html>

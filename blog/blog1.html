@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog| Darkweb-A Visit To Darknes</title>
+    <title>Blog| Darkweb-A Visit To Darkness</title>
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="icon" href="../res/logo.ico" type="image/icon type">
@@ -46,15 +46,15 @@
         <div class="row">
             
                <!-- leftbar -->
-            <div class="card text-white bg-secondary col-md-3 overflow-auto  " style="max-width: 18rem; max-height: 30rem; margin-left: auto; margin-right: auto; ">
+            <div class="card text-white bg-secondary col-md-3 overflow-auto  " style="max-width: 18rem; max-height:max-content; margin-left: auto; margin-right: auto; ">
                 <div class="card-header " style="font-family:monospace; text-align: center;"><i class="fa-regular fa-clipboard">&ThickSpace;&ThickSpace;</i>Note</div>
                 <div class="card-body" style="text-align: center;">
-                    <h5 class="card-title" >Welcome!!</h5>
-                  <p class="card-text" style="text-align: justify;">I write my findings and experiences in form of blogs here.<br/> Kindly visit the about section for more information about me and to download my resume. </p><br/>
+                    <h5 class="card-title" >Thanks!!</h5>
+                  <p class="card-text" style="text-align: justify;">Thanks for reading my blog article. If you find it useful and informational, make sure to provide feedback by contacting  me.<br/> Kindly visit the about section for more information about me and to contact me on my social media. </p><br/>
                   <hr>
                   <blockquote class="blockquote text-center">
                 
-                 <cite title="Source Title"><q>Detect. Alleviate. Investigate.</q></cite><br/><span style="font-family:cursive; font-size: small;">- Akash Rasgania</span>
+                 <cite title="Source Title"><q id="quote"></q></cite><br/><span style="font-family:cursive; font-size: small;">- Akash Rasgania</span>
                   
                   </blockquote>
                 </div>
@@ -107,5 +107,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script> 
+        function getquote()
+        {
+            var ary=["Detect. Alleviate. Investigate","Think. Click. Surf."]
+            
+            document.getElementById("quote").innerHTML = ary[ Math.floor(Math.random()*ary.length)]
+        }
+        getquote();
+    </script>
 </body>
 </html>
