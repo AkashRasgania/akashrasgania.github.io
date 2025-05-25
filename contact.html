@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About | Akash Rasgania</title>
+  <title>Contact | Akash Rasgania</title>
 
   <!-- Bootstrap & Icons -->
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"/>
@@ -55,20 +55,13 @@
       color: #fff;
     }
 
-    .about-section {
-      padding: 40px 0;
-    }
-
-    .about-section h1 {
-      font-weight: 600;
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .about-section p {
-      font-size: 1rem;
-      color: #333;
-      line-height: 1.6;
+    .form-container {
+      max-width: 600px;
+      margin: auto;
+      padding: 30px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      background: #fff;
     }
   </style>
 </head>
@@ -94,32 +87,27 @@
     </div>
   </nav>
 
-  <!-- About Content -->
-  <div class="container about-section">
-    <h1>About Me</h1>
-   <p>
-        Hello! I'm Akash Rasgania, a dedicated and aspiring cybersecurity professional at the beginning of my career. With a strong interest in digital security and a commitment to learning, I enjoy exploring system vulnerabilities, ethical hacking, and the evolving landscape of cyber threats.
-      </p>
-
-      <p>
-        This website is my personal space where I publish blogs related to cybersecurity concepts, tools, and trends. I aim to simplify complex topics for learners and share insights that can benefit others. Alongside my original content, this site also displays curated cybersecurity news from trusted external sources. Please note that I do not write or own these news articles — they belong to their respective publishers.
-      </p>
-
-      <p>
-        I fully respect intellectual property and original authorship. If you believe any content here violates copyrights or raises ownership concerns, please connect with me through my social media channels so I can promptly address the issue.
-      </p>
-
-      <p>
-        I greatly value community feedback. If you have suggestions, reviews, or thoughts you'd like to share, please fill out the form available on the Contact Me page. Your insights help me improve and serve readers better.
-      </p>
-
-      <p>
-        If you are a content creator and would like to have your cybersecurity-related work featured on this website, feel free to reach out to me via social media. I'm open to collaborations and guest contributions that align with the site’s mission.
-      </p>
-
-      <p>
-        Thank you for visiting, and I hope you find the content here insightful and helpful!
-      </p>
+  <!-- Contact Form -->
+  <div class="container mt-5">
+    <div class="form-container">
+      <h3 class="text-center mb-4">Contact Me / Leave a Review</h3>
+      <form id="contactForm">
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" name="name" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label>Your Email</label>
+          <input type="email" name="email" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label>Message / Review</label>
+          <textarea name="message" rows="5" class="form-control" required></textarea>
+        </div>
+        <div id="alertArea"></div>
+        <button type="submit" class="btn btn-primary">Send</button>
+      </form>
+    </div>
   </div>
 
   <!-- Footer -->
@@ -133,7 +121,7 @@
       <div>
         <a href="https://cybernews.com/news/">Cyber News</a> | 
         <a href="https://news.ycombinator.com/">Hacker News</a> | 
-        <a href="../contact.html">Contact Me</a>
+        <a href="contact.html">Contact Me</a>
       </div>
       <div class="mt-2">
         &copy; 2025 Akash Rasgania
@@ -142,16 +130,44 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>  
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>  
-
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
   <script>
-    // Navbar scroll behavior
+   
+
+    function showAlert(message, type) {
+      const alertArea = document.getElementById("alertArea");
+      alertArea.innerHTML = `<div class="alert alert-${type}">${message}</div>`;
+    }
+
+    $('#contactForm').on('submit', function(event) {
+    event.preventDefault(); // prevent reload
+    
+    var formData = new FormData(this);
+    formData.append('service_id', 'service_tfm4c4q');
+    formData.append('template_id', 'template_ndu8ych');
+    formData.append('user_id', 'cthe0lAaIDIYNFPT_');
+ 
+    $.ajax('https://api.emailjs.com/api/v1.0/email/send-form', {
+        type: 'POST',
+        data: formData,
+        contentType: false, // auto-detection
+        processData: false // no need to parse formData to string
+    }).done(function() {
+        showAlert('Your mail is sent!','success');
+        form.reset();
+        
+    }).fail(function(error) {
+        showAlert('Your mail is not sent!','failed');
+    });
+});
+
+    // Navbar scroll effect
     $(function () {
       const $navbar = $(".navbar");
       const windowHeight = $(window).height();
-
       $(window).on("scroll", function () {
         if ($(this).scrollTop() > 10 && $(this).scrollTop() + windowHeight < $(document).height() - 100) {
           $navbar.addClass("scrolled");

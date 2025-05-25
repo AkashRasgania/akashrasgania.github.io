@@ -1,123 +1,307 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home| Akash Rasgania</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="icon" href="res/logo.ico" type="image/icon type">
-    <script src="https://kit.fontawesome.com/812c462023.js" crossorigin="anonymous"></script>
-    <style>
-        /* Custom Styles */
-        body {
-            padding-top: 60px; /* Adjust the height of navbar */
-            user-select: none;
-        }
-        .footer {
-            background-color: #f8f9fa;
-            padding: 20px 0;
-            text-align: center;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home | Akash Rasgania</title>
+
+  <!-- Bootstrap & Icons -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"/>
+  <script src="https://kit.fontawesome.com/812c462023.js" crossorigin="anonymous"></script>
+  <link rel="icon" href="res/logo.ico" type="image/icon type"/>
+
+  <style>
+    body {
+      padding-top: 60px;
+      background-color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      user-select: none;
+    }
+
+    .navbar {
+      transition: background-color 0.3s ease, color 0.3s ease;
+      background-color: white;
+    }
+
+    .navbar.scrolled {
+      background-color: black !important;
+    }
+
+    .navbar-brand, .navbar-nav .nav-link {
+      color: black !important;
+      transition: color 0.3s ease;
+    }
+
+    .navbar.scrolled .navbar-brand,
+    .navbar.scrolled .nav-link {
+      color: white !important;
+    }
+
+    .clean-quote {
+      font-family: 'Georgia', serif;
+      font-size: 1.8rem;
+      font-style: italic;
+      position: relative;
+      display: inline-block;
+      max-width: 90%;
+      margin: 0 auto;
+      color: #222;
+      padding: 0 1rem;
+      line-height: 1.6;
+    }
+
+    .clean-quote p {
+      display: inline;
+      position: relative;
+    }
+
+    .clean-quote p::before,
+    .clean-quote p::after {
+      font-family: serif;
+      font-size: 2rem;
+      color: #999;
+      position: relative;
+    }
+
+    .clean-quote p::before {
+      content: "“";
+      margin-right: 0.2rem;
+    }
+
+    .clean-quote p::after {
+      content: "”";
+      margin-left: 0.2rem;
+    }
+
+    .preview-card {
+      background-color: #ffffff;
+      padding: 1.25rem;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: auto;
+    }
+
+    .preview-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    .preview-card h5 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #111;
+      margin-bottom: 0.5rem;
+    }
+
+    .preview-card p {
+      font-size: 0.95rem;
+      color: #444;
+      margin-bottom: 0.75rem;
+      line-height: 1.5;
+    }
+
+    .preview-card .meta {
+      font-size: 0.8rem;
+      color: #666;
+      border-top: 1px solid #eee;
+      padding-top: 0.5rem;
+      margin-top: auto;
+    }
+
+    .card-section h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #000;
+      display: inline-block;
+      padding-bottom: 0.25rem;
+    }
+
+    .footer {
+      background-color: #000;
+      padding: 20px 0;
+      color: white;
+      text-align: center;
+    }
+
+    .footer a {
+      color: #ccc;
+      margin: 0 10px;
+      font-size: 1rem;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      color: #fff;
+    }
+  </style>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="index.html" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" ><i class="fa-solid fa-blog">&ThickSpace;</i>Akash Rasgania</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html"><i class="fa fa-home" aria-hidden="true"></i>&ThickSpace; Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="about.html"> <i class="fa-solid fa-address-card"></i>&ThickSpace; About</a>
-                </li>
-               
-            </ul>
-        </div>
-    </nav>
 
-    <!-- Main Content -->
-    <div class="container mt-5">
-        <div class="row">
-            
-               <!-- leftbar -->
-            <div class="card text-white bg-secondary col-md-3 overflow-auto  " style="max-width: 18rem; max-height: 30rem; margin-left: auto; margin-right: auto; ">
-                <div class="card-header " style="font-family:monospace; text-align: center;"><i class="fa-regular fa-clipboard">&ThickSpace;&ThickSpace;</i>Note</div>
-                <div class="card-body" style="text-align: center;">
-                    <h5 class="card-title" >Welcome!!</h5>
-                  <p class="card-text" style="text-wrap: stable;">I write my findings and experiences in form of blogs here.&ThickSpace;&ThickSpace; Kindly visit the about section for more information about me and to download my resume. </p><br/>
-                  <hr>
-                  <blockquote class="blockquote text-center">
-                
-                 <cite title="Source Title"><q id="quote"></q></cite><br/><span style="font-family:cursive; font-size: small;">- Akash Rasgania</span>
-                  
-                  </blockquote>
-                </div>
-            </div>
-               
-                <!-- Middle -->
-            <div class="col-md-6 mt-3 overflow-auto">
-                <h2>Dark Web - A Visit To The Darkness</h2>
-                <p>Internet is a power, and with great power comes great responsibility. Safeguarding the internet is challenging task for the cybersecurity..</p>
-                <a href="blog/blog1.html">Read more...</a>
-                <hr>
-                <h2>Increased Scams on Social Media</h2>
-                <p>Social media is an integral part of our lives and has transformed how we communicate and interact with each other. It is used by almost every individual..</p>
-                <a href="blog/blog2.html">Read more...</a> 
-                <hr>
-    
-            </div>
-
-            <!-- Sidebar -->
-            <div class="col-md-3 mt-3 overflow-auto">
-                <h5>Important Websites</h5>
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a href="https://cybernews.com/news/">Cyber News</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="https://cve.mitre.org/">CVE-MITRE</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="https://cert-in.org.in/">Cert-In</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="https://thehackernews.com/">The Hacker News</a>
-                    </li>
-                   
-                </ul>
-            
-                
-            </div>
-            
-        </div>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-md fixed-top">
+    <a class="navbar-brand" href="index.html">
+      <i class="fa-solid fa-blog"></i>&ThickSpace;Akash Rasgania
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html"><i class="fa fa-home"></i>&ThickSpace; Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html"><i class="fa-solid fa-address-card"></i>&ThickSpace; About</a>
+        </li>
+      </ul>
     </div>
-    
+  </nav>
 
-    <!-- Footer -->
-    <footer class="footer mt-2 py-3 py">
-        <div class="container">
-            <span class="text-muted">&copy; 2024 Akash Rasgania</span>
-        </div>
-    </footer>
+  <!-- Quote Section -->
+  <div class="container text-center my-5">
+    <blockquote class="clean-quote">
+      <p id="quote">“Your default quote here.”</p>
+      <footer class="blockquote-footer mt-2">Akash Rasgania</footer>
+    </blockquote>
+  </div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script> 
-        function getquote()
-        {
-            var ary=["Detect. Alleviate. Investigate","Think. Click. Surf."]
-            
-            document.getElementById("quote").innerHTML = ary[ Math.floor(Math.random()*ary.length)]
+  <!-- Main Content -->
+  <div class="container mt-4">
+    <div class="row">
+      <!-- Blogs Section -->
+      <div class="col-md-6 card-section">
+        <h3>Blogs</h3>
+        <div id="blogs-container"></div>
+      </div>
+
+      <!-- Cybersecurity News Section -->
+      <div class="col-md-6 card-section">
+        <h3>Recent Cybersecurity News</h3>
+        <div id="news-container"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer mt-4">
+    <div class="container">
+      <div class="mb-2">
+        <a href="https://instagram.com/akashrasgania" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/akashrasgania" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=100010135260497 " target="_blank"><i class="fab fa-facebook"></i></a>
+      </div>
+      <div>
+        <a href="https://cybernews.com/news/">Cyber News</a> | 
+        <a href="https://news.ycombinator.com/">Hacker News</a> | 
+        <a href="../contact.html">Contact Me</a>
+      </div>
+      <div class="mt-2">
+        &copy; 2025 Akash Rasgania
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>  
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>  
+
+  <script>
+    // Navbar scroll behavior
+    $(function () {
+      const $navbar = $(".navbar");
+      const windowHeight = $(window).height();
+
+      $(window).on("scroll", function () {
+        if ($(this).scrollTop() > 10 && $(this).scrollTop() + windowHeight < $(document).height() - 100) {
+          $navbar.addClass("scrolled");
+        } else {
+          $navbar.removeClass("scrolled");
         }
-        getquote();
-    </script>
+      });
+    });
+
+    // Quote logic
+    function getquote() {
+      var quotes = [
+        "Detect. Alleviate. Investigate.",
+        "Think. Click. Surf."
+      ];
+      const quoteText = quotes[Math.floor(Math.random() * quotes.length)];
+      document.getElementById("quote").innerText = quoteText;
+    }
+    getquote();
+
+    // Fetch blog previews
+    async function fetchBlogPreviews() {
+      const blogsContainer = document.getElementById("blogs-container");
+      const totalBlogs = 2;
+
+      for (let i = 1; i <= totalBlogs; i++) {
+        try {
+          const response = await fetch(`blog/blog${i}.html`);
+          const text = await response.text();
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(text, "text/html");
+
+          const title = doc.querySelector("h1")?.innerText || `Blog ${i}`;
+          const author = doc.querySelector("meta[name='author']")?.getAttribute("content") || "Unknown Author";
+          const date = doc.querySelector("meta[name='date']")?.getAttribute("content") || "Unknown Date";
+          const paragraphs = doc.querySelectorAll("p");
+          let description = "";
+          for (let p of paragraphs) {
+            if (p.innerText.trim().length > 0) {
+              description = p.innerText.trim().slice(0, 150) + "...";
+              break;
+            }
+          }
+
+          const card = document.createElement("div");
+          card.className = "preview-card";
+          card.innerHTML = `
+            <h5>${title}</h5>
+            <p>${description}</p>
+            <div class="meta"><strong>${author}</strong> | ${date} &nbsp; <a href="blog/blog${i}.html">Read more</a></div>
+          `;
+          blogsContainer.appendChild(card);
+        } catch (error) {
+          console.error(`Error fetching blog${i}.html:`, error);
+        }
+      }
+    }
+
+    // Fetch cybersecurity news
+    async function fetchCyberNews() {
+      const newsContainer = document.getElementById("news-container");
+
+      try {
+        const response = await fetch("https://newsdata.io/api/1/news?apikey=pub_136311466b764a3cb338b964eaa8c81d&q=cybersecurity&language=en");
+        const data = await response.json();
+
+        data.results.forEach(article => {
+          const description = article.description ? article.description.slice(0, 140) + "..." : "";
+          const card = document.createElement("div");
+          card.className = "preview-card";
+          card.innerHTML = `
+            <h5>${article.title}</h5>
+            <p>${description}</p>
+            <div class="meta"><strong>${article.source_id}</strong> | ${new Date(article.pubDate).toLocaleDateString()} &nbsp; <a href="${article.link}" target="_blank">Read more</a></div>
+          `;
+          newsContainer.appendChild(card);
+        });
+      } catch (error) {
+        console.error("Error fetching cybersecurity news:", error);
+      }
+    }
+
+    fetchBlogPreviews();
+    fetchCyberNews();
+  </script>
 </body>
 </html>
