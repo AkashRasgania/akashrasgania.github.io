@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Increased Scams On Social Media | Akash Rasgania</title>
+
+  <meta name="author" content="Akash Rasgania">
+  <meta name="date" content="2024-12-28" />
+  <meta name="description" content="Analyzing the rise of social media scams, fake profiles, and how to stay safe online." />
+  <meta name="keywords" content="cybersecurity, social media scams, romance scams, reverse image search, safety" />
+  
+  <meta property="og:title" content="Increased Scams On Social Media">
+  <meta property="og:description" content="How scams originate on social platforms and tools to verify identities.">
+  <meta property="og:image" content="../res/logo.ico"> 
+  <meta property="og:type" content="article">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Chakra+Petch:wght@700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"/>
+  <script src="https://kit.fontawesome.com/812c462023.js" crossorigin="anonymous"></script>
+  
+  <link rel="icon" href="../res/logo.ico" type="image/icon type"/>
+
+  <style>
+    /* --- GLOBAL THEME --- */
+    body {
+      padding-top: 70px;
+      background-color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      user-select: none;
+      color: #333;
+    }
+
+    .fade-in-section {
+      opacity: 0;
+      transform: translateY(20px); 
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    
+    .fade-in-section.is-visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* --- NAVBAR --- */
+    .navbar {
+      transition: background-color 0.3s ease, color 0.3s ease;
+      background-color: white;
+      border-bottom: none !important;
+      padding: 10px 1rem;
+    }
+
+    .navbar.scrolled {
+      background-color: black !important;
+    }
+
+    .navbar-brand, .navbar-nav .nav-link {
+      color: black !important;
+      transition: color 0.3s ease;
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar.scrolled .navbar-brand,
+    .navbar.scrolled .nav-link {
+      color: white !important;
+    }
+
+    /* --- PROFESSIONAL SLIDER TOGGLER --- */
+    .navbar-toggler {
+        border: none !important;
+        padding: 0;
+        width: 28px;
+        height: 20px;
+        position: relative;
+        cursor: pointer;
+        outline: none !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+
+    .navbar-toggler span {
+        display: block;
+        height: 2px;
+        background: black;
+        border-radius: 2px;
+        transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+        pointer-events: none;
+    }
+
+    .navbar-toggler span:nth-child(1) { width: 100%; }
+    .navbar-toggler span:nth-child(2) { width: 70%; }
+    .navbar-toggler span:nth-child(3) { width: 40%; }
+
+    .navbar.scrolled .navbar-toggler span {
+        background: white;
+    }
+
+    .navbar-toggler.active span:nth-child(1) { width: 40%; }
+    .navbar-toggler.active span:nth-child(2) { width: 100%; }
+    .navbar-toggler.active span:nth-child(3) { width: 70%; }
+
+    .hacker-wrapper {
+        font-family: 'Share Tech Mono', monospace; 
+        font-size: 1.1rem; 
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .typewriter-text { white-space: pre; position: relative; }
+    .typewriter-text::after {
+        content: "█"; 
+        display: inline-block;
+        margin-left: 5px;
+        font-size: 0.9em;
+        color: #000;
+        animation: blink 1s step-end infinite;
+    }
+    .navbar.scrolled .typewriter-text::after { color: #fff; }
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+    /* --- BLOG STYLING --- */
+    .blog-container {
+      max-width: 800px;
+      margin: 3rem auto;
+      padding: 0 20px;
+    }
+
+    .blog-container h1 {
+      font-family: 'Chakra Petch', sans-serif; 
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #000;
+      display: inline-block;
+      position: relative;
+    }
+    
+    .blog-container h1::after {
+        content: '';
+        display: block;
+        width: 60px;
+        height: 4px;
+        background: #000;
+        margin-top: 10px;
+    }
+
+    .blog-meta {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.95rem;
+      color: #666;
+      margin-top: 1.5rem;
+      margin-bottom: 2.5rem;
+      border-left: 3px solid #000;
+      padding-left: 12px;
+    }
+
+    .blog-content p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #333;
+      margin-bottom: 1.5rem;
+    }
+
+    .blog-content ul, .blog-content ol {
+        font-size: 1.05rem;
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+        color: #333;
+    }
+
+    .footer {
+      background-color: #000;
+      padding: 40px 0;
+      color: #888;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .footer a { color: #888; margin: 0 10px; text-decoration: none; }
+    .footer a:hover { color: #fff; }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-md fixed-top navbar-light">
+    <a class="navbar-brand" href="../index.html">
+      <div class="hacker-wrapper">
+          <span class="typewriter-text" id="typewriter-target"></span>
+      </div>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" id="nav-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><a class="nav-link" href="../index.html"><i class="fa-solid fa-house-laptop"></i>&ThickSpace; Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="../about.html"><i class="fa-solid fa-fingerprint"></i>&ThickSpace; About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="blog-container fade-in-section">
+    <h1>Increased Scams On Social Media</h1>
+    <div class="blog-meta">By Akash Rasgania | Dec 28, 2024</div>
+    
+    <div class="blog-content">
+       <p>Social media is an integral part of our lives and has transformed how we communicate and interact with each other. It is used by almost every individual who carries a smartphone and has an active internet connection. Most users belong to the age group of 18-34 years. Facebook, Instagram, and WhatsApp remain the preferred social media platforms for most users, with approximately 2.6 billion, 2 billion, and 2 billion active users, respectively. More than 50% of their active user base comes from the aforementioned age group.</p>
+       
+       <figure class="my-4">
+         <img src="https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+              alt="Cyber Security Concept" 
+              class="img-fluid rounded shadow w-100" 
+              style="max-height: 400px; object-fit: cover;">
+         <figcaption class="text-muted text-center mt-2" style="font-size: 0.85rem;">
+           Cybersecurity threats are rising on social platforms. | Source: <a href="https://www.pexels.com/" target="_blank" style="color: #888;">Pexels</a>
+         </figcaption>
+       </figure>
+
+       <p> Many social media users, especially teenagers, have also transitioned to various other applications like Tinder, Happn, and Telegram. I will discuss Telegram in another blog, as it requires a comprehensive study to understand its working principles, privacy model, and the activities taking place on the platform. Tinder and Happn are among the widely used dating applications where individuals seeking romantic relationships connect frequently. Given their desire for emotional and physical connections, these dating platforms, along with other social media apps, serve as marketplaces for fraudsters and scammers. </p>
+       
+       <p>Approximately 20% of overall scams are related to dating and romance scams. Scammers create fake profiles on these apps using images of social media influencers who have public profiles, making it easy for fraudsters to take their photos. Other users on these platforms perceive these profiles as legitimate and begin interacting with them, ultimately falling prey to their traps. I would like to share my personal case study on a dating platform called Mingle2. There are many fake profiles on this platform, where scammers provide their mobile numbers in their profile bios. </p>
+       
+       <p>As users, we need to understand that no one would typically include their mobile number in their profile bio unless they are a scammer or unaware of the privacy consequences. Although I reported the profile, I know that it will make little difference in reducing the scams occurring on the platform.</p>
+       
+       <p>Later, I came across a profile that I suspected was fake but appeared very legitimate. I figured out a way to verify that profile and reveal its true identity. I captured a screenshot of the photo from the profile and uploaded it to a reverse image search tool called "Facecheck.id." This tool was free for some searches at the time I used it, but it has since become a paid service. I will mention the link to this tool and some of its alternatives that may be helpful for users. </p> 
+       
+       <p>This tool traverses various social media platforms to find the sources of that image and also returns similar images of the face in the photo, which is truly powerful from an investigative perspective. Through this tool, I found the original and verified social media profile of the owner of the photo. She is a social media influencer, and I made her aware of the misuse of her photos, leaving any further action solely up to her.</p>
+       
+       <p>This was just one case among various fake profiles that remain unreported. Scammers continue to deceive individuals through various other mediums and tricks, which are detailed below. India, being one of the most populated countries with high social media usage, requires users to be more cyber-educated and trained. Cyber volunteers need to unite to make the internet a safer place for everyone. Government entities, law enforcement, and non-profit cyber NGOs should organize more activities involving cyber volunteers and other individuals.</p>
+       
+       <p class="mt-4">
+         <b>Some of the major scams and their indicators are: </b>  
+       </p>
+       <ul>
+         <li>
+           <strong>Romance Scams:</strong> Scammers create fake profiles on dating platforms to exploit victims emotionally and financially.
+           <ul>
+             <li>Indicators: Profiles with few pictures or overly attractive images; Vague or generic bios that lack personal details; Requests for money or personal information early in the conversation.</li>
+           </ul>
+         </li>
+         <li>
+           <strong>Online Shopping Scams:</strong> Fraudulent websites trick consumers into purchasing non-existent products.
+           <ul>
+             <li>Indicators: Prices that are significantly lower than those on legitimate sites; Poor website design or a lack of contact information.</li>
+           </ul>
+         </li>
+         <li>
+           <strong>Investment Scams:</strong> Promises of high returns on investments that do not exist.
+           <ul>
+             <li>Indicators: Guaranteed returns with little or no risk; Pressure to invest quickly before the opportunity disappears.</li>
+           </ul>
+         </li>
+         <li>
+           <strong>Lottery and Prize Scams:</strong> Victims are told they have won a lottery or prize but must pay fees to claim it.
+           <ul>
+             <li>Indicators: Notification of winning from unknown sources; Requests for personal information or payment of fees upfront; Poor grammar and spelling in communications.</li>
+           </ul>
+         </li>
+       </ul>
+
+       <p class="mt-4">
+         <b>Some good cyber hygiene tips:</b>
+       </p>
+       <ol>
+         <li>Use strong, unique passwords for each account.</li>
+         <li>Enable two-factor authentication wherever possible.</li>
+         <li>Be cautious about sharing personal information online.</li>
+         <li>Verify links before clicking to avoid phishing scams.</li>
+         <li>Avoid using public Wi-Fi for sensitive transactions.</li>
+       </ol>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="mb-2">
+        <a href="https://instagram.com/akashrasgania" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/akashrasgania" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=100010135260497" target="_blank"><i class="fab fa-facebook-square"></i></a>
+      </div>
+      <div>
+        <a href="https://cybernews.com/news/">Cyber News</a> | <a href="https://news.ycombinator.com/">Hacker News</a> | <a href="../contact.html">Contact Me</a>
+      </div>
+      <div class="mt-2">&copy; 2025 Akash Rasgania</div>
+    </div>
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
+
+  <script>
+    if (history.scrollRestoration) { history.scrollRestoration = 'manual'; }
+    window.scrollTo(0, 0);
+
+    const textToType = "user@akash:~/blog/scams-socialmedia";
+    const typeTarget = document.getElementById("typewriter-target");
+    let typeIndex = 0;
+
+    function typeWriter() {
+        if (typeIndex < textToType.length) {
+            typeTarget.innerText += textToType.charAt(typeIndex);
+            typeIndex++;
+            setTimeout(typeWriter, 80); 
+        }
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in-section').forEach(section => observer.observe(section));
+
+    $(function () {
+      const $navbar = $(".navbar");
+      $(window).on("scroll", function () {
+        if ($(window).scrollTop() > 10) {
+            $navbar.addClass("scrolled navbar-dark").removeClass("navbar-light");
+        } else {
+            $navbar.removeClass("scrolled navbar-dark").addClass("navbar-light");
+        }
+      });
+
+      $('#collapsibleNavbar').on('show.bs.collapse', function () {
+          $('#nav-icon').addClass('active');
+      });
+      $('#collapsibleNavbar').on('hide.bs.collapse', function () {
+          $('#nav-icon').removeClass('active');
+      });
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+        typeWriter();
+    });
+  </script>
+</body>
+</html>
