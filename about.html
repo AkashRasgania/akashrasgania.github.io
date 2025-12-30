@@ -5,22 +5,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About | Akash Rasgania</title>
 
-  <!-- Bootstrap & Icons -->
+  <meta name="description" content="About Akash Rasgania - Cybersecurity Researcher & Developer.">
+  <meta property="og:title" content="About | Akash Rasgania">
+  <meta property="og:description" content="Learn more about my journey in Cybersecurity and Tech.">
+  <meta property="og:image" content="res/logo.ico"> 
+  <meta property="og:url" content="https://akashrasgania.com/about.html"> 
+  <meta property="og:type" content="profile">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Chakra+Petch:wght@700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"/>
   <script src="https://kit.fontawesome.com/812c462023.js" crossorigin="anonymous"></script>
+  
   <link rel="icon" href="res/logo.ico" type="image/icon type"/>
 
   <style>
+    /* --- GLOBAL THEME --- */
     body {
-      padding-top: 60px;
+      padding-top: 70px;
       background-color: white;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       user-select: none;
+      color: #333;
     }
 
+    /* --- ANIMATION --- */
+    .fade-in-section {
+      opacity: 0;
+      transform: translateY(20px); 
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      will-change: opacity, transform;
+    }
+    
+    .fade-in-section.is-visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* --- NAVBAR --- */
     .navbar {
       transition: background-color 0.3s ease, color 0.3s ease;
       background-color: white;
+      border-bottom: none !important;
+      box-shadow: none !important;
+      padding: 10px 1rem;
     }
 
     .navbar.scrolled {
@@ -30,67 +60,129 @@
     .navbar-brand, .navbar-nav .nav-link {
       color: black !important;
       transition: color 0.3s ease;
+      display: flex;
+      align-items: center;
     }
 
     .navbar.scrolled .navbar-brand,
     .navbar.scrolled .nav-link {
       color: white !important;
     }
-    /* Navbar toggler custom style */
-.navbar-toggler {
-  border-color: transparent;
-}
 
-.navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='black' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-}
+    /* --- TERMINAL TEXT --- */
+    .hacker-wrapper {
+        font-family: 'Share Tech Mono', monospace; 
+        font-size: 1.1rem; 
+        display: inline-flex;
+        align-items: center;
+        cursor: pointer;
+    }
 
-.navbar.scrolled .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-}
+    .typewriter-text {
+        white-space: pre; 
+        position: relative;
+        font-weight: 400;
+    }
 
+    .typewriter-text::after {
+        content: "█"; 
+        display: inline-block;
+        margin-left: 5px;
+        font-size: 0.9em;
+        color: #000;
+        animation: blink 1s step-end infinite;
+        vertical-align: middle;
+    }
 
+    .navbar.scrolled .typewriter-text::after { color: #fff; }
+
+    @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+    }
+
+    /* Navbar Toggler */
+    .navbar-toggler { border-color: transparent; }
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30'%3E%3Cpath stroke='black' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+    .navbar.scrolled .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30'%3E%3Cpath stroke='white' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+
+    /* --- CONTENT STYLING --- */
+    .about-section {
+      padding: 60px 0;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .about-title {
+      font-family: 'Chakra Petch', sans-serif;
+      font-weight: 700;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: #000;
+      display: inline-block;
+      position: relative;
+    }
+
+    .about-title::after {
+        content: '';
+        display: block;
+        width: 60px;
+        height: 4px;
+        background: #000;
+        margin-top: 5px;
+        border-radius: 2px;
+    }
+
+    .content-wrapper p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      color: #444;
+    }
+
+    .text-link {
+        color: #000;
+        font-weight: 600;
+        text-decoration: underline;
+        transition: color 0.2s;
+    }
+    .text-link:hover {
+        color: #555;
+    }
+
+    /* --- FOOTER UPDATED --- */
     .footer {
       background-color: #000;
-      padding: 20px 0;
-      color: white;
+      padding: 40px 0;
+      color: #888; 
       text-align: center;
+      margin-top: 80px;
     }
 
     .footer a {
-      color: #ccc;
+      color: #888;
       margin: 0 10px;
       font-size: 1rem;
       text-decoration: none;
+      transition: color 0.2s ease;
     }
 
-    .footer a:hover {
-      color: #fff;
-    }
+    .footer a:hover { color: #fff; }
+    .social-icon { font-size: 1.2rem; }
 
-    .about-section {
-      padding: 40px 0;
-    }
-
-    .about-section h1 {
-      font-weight: 600;
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .about-section p {
-      font-size: 1rem;
-      color: #333;
-      line-height: 1.6;
-    }
   </style>
 </head>
 <body>
 
-  <!-- Navbar -->
   <nav class="navbar navbar-expand-md fixed-top">
     <a class="navbar-brand" href="index.html">
-      <i class="fa-solid fa-blog"></i>&ThickSpace;Akash Rasgania
+      <div class="hacker-wrapper">
+          <span class="typewriter-text" id="typewriter-target"></span>
+      </div>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
@@ -98,54 +190,59 @@
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href="index.html"><i class="fa fa-home"></i>&ThickSpace; Home</a>
+          <a class="nav-link" href="index.html">
+            <i class="fa-solid fa-house-laptop"></i>&ThickSpace; Home
+          </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="about.html"><i class="fa-solid fa-address-card"></i>&ThickSpace; About</a>
+          <a class="nav-link" href="about.html">
+            <i class="fa-solid fa-fingerprint"></i>&ThickSpace; About
+          </a>
         </li>
       </ul>
     </div>
   </nav>
 
-  <!-- About Content -->
   <div class="container about-section px-4">
-    <h1>About Me</h1>
-   <p>
-        Hello! I'm Akash Rasgania, a dedicated and aspiring cybersecurity professional at the beginning of my career. With a strong interest in digital security and a commitment to learning, I enjoy exploring system vulnerabilities, ethical hacking, and the evolving landscape of cyber threats.
-      </p>
+    <div class="content-wrapper fade-in-section">
+       <h1 class="about-title">About Me</h1>
+       
+       <p>
+         Hello! I'm <strong>Akash Rasgania</strong>, a dedicated and aspiring cybersecurity professional at the beginning of my career. With a strong interest in digital security and a commitment to learning, I enjoy exploring system vulnerabilities, ethical hacking, and the evolving landscape of cyber threats.
+       </p>
 
-      <p>
-        This website is my personal space where I publish blogs related to cybersecurity concepts, tools, and trends. I aim to simplify complex topics for learners and share insights that can benefit others. Alongside my original content, this site also displays curated cybersecurity news from trusted external sources. Please note that I do not write or own these news articles — they belong to their respective publishers.
-      </p>
+       <p>
+         This website is my personal space where I publish blogs related to cybersecurity concepts, tools, and trends. I aim to simplify complex topics for learners and share insights that can benefit others. Alongside my original content, this site also displays curated cybersecurity news from trusted external sources. Please note that I do not write or own these news articles — they belong to their respective publishers.
+       </p>
 
-      <p>
-        I fully respect intellectual property and original authorship. If you believe any content here violates copyrights or raises ownership concerns, please connect with me through my social media channels so I can promptly address the issue.
-      </p>
+       <p>
+         I fully respect intellectual property and original authorship. If you believe any content here violates copyrights or raises ownership concerns, please connect with me through my social media channels so I can promptly address the issue.
+       </p>
 
-      <p>
-        I greatly value community feedback. If you have suggestions, reviews, or thoughts you'd like to share, please fill out the form available on the Contact Me page. Your insights help me improve and serve readers better.
-      </p>
+       <p>
+         I greatly value community feedback. If you have suggestions, reviews, or thoughts you'd like to share, please fill out the form available on the <strong><a href="../contact.html" class="text-link">Contact Me</a></strong> page. Your insights help me improve and serve readers better.
+       </p>
 
-      <p>
-        If you are a content creator and would like to have your cybersecurity-related work featured on this website, feel free to reach out to me via social media. I'm open to collaborations and guest contributions that align with the site’s mission.
-      </p>
+       <p>
+         If you are a content creator and would like to have your cybersecurity-related work featured on this website, feel free to reach out to me via social media. I'm open to collaborations and guest contributions that align with the site’s mission.
+       </p>
 
-      <p>
-        Thank you for visiting, and I hope you find the content here insightful and helpful!
-      </p>
+       <p class="mb-0">
+         Thank you for visiting, and I hope you find the content here insightful and helpful!
+       </p>
+    </div>
   </div>
 
-  <!-- Footer -->
-  <footer class="footer mt-4">
+  <footer class="footer">
     <div class="container">
       <div class="mb-2">
-        <a href="https://instagram.com/akashrasgania" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.linkedin.com/in/akashrasgania" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://www.facebook.com/profile.php?id=100010135260497" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://instagram.com/akashrasgania" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/akashrasgania" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=100010135260497" target="_blank" class="social-icon"><i class="fab fa-facebook-square"></i></a>
       </div>
       <div>
-        <a href="https://cybernews.com/news/">Cyber News</a> | 
-        <a href="https://news.ycombinator.com/">Hacker News</a> | 
+        <a href="https://cybernews.com/news/">Cyber News</a> |
+        <a href="https://news.ycombinator.com/">Hacker News</a> |
         <a href="../contact.html">Contact Me</a>
       </div>
       <div class="mt-2">
@@ -154,24 +251,83 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>  
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
 
   <script>
-    // Navbar scroll behavior
-    $(function () {
-      const $navbar = $(".navbar");
-      const windowHeight = $(window).height();
+    // --- 0. FORCE SCROLL TO TOP ON REFRESH ---
+    if (history.scrollRestoration) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
 
-      $(window).on("scroll", function () {
-        if ($(this).scrollTop() > 10 && $(this).scrollTop() + windowHeight < $(document).height() - 100) {
-          $navbar.addClass("scrolled");
-        } else {
-          $navbar.removeClass("scrolled");
+    // --- 1. TYPEWRITER (Directory Style) ---
+    const textToType = "user@akash:~/about"; 
+    const typeTarget = document.getElementById("typewriter-target");
+    let typeIndex = 0;
+    let isTyping = true;
+
+    function typeWriter() {
+        if (isTyping) {
+            if (typeIndex < textToType.length) {
+                typeTarget.innerText += textToType.charAt(typeIndex);
+                typeIndex++;
+                setTimeout(typeWriter, 50); 
+            } else {
+                isTyping = false;
+                setTimeout(resetTypewriter, 5000); 
+            }
+        }
+    }
+
+    function resetTypewriter() {
+        typeTarget.innerText = "";
+        typeIndex = 0;
+        isTyping = true;
+        typeWriter();
+    }
+
+    // --- 2. ANIMATION OBSERVER ---
+    const observerOptions = {
+      threshold: 0.1 
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target); 
         }
       });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in-section').forEach(section => {
+      observer.observe(section);
+    });
+
+    // --- 3. NAVBAR SCROLL ---
+    $(function () {
+      const $navbar = $(".navbar");
+      let isScrolling = false;
+      $(window).on("scroll", function () {
+        if (!isScrolling) {
+          window.requestAnimationFrame(function () {
+            if ($(window).scrollTop() > 10) {
+              $navbar.addClass("scrolled");
+            } else {
+              $navbar.removeClass("scrolled");
+            }
+            isScrolling = false;
+          });
+          isScrolling = true;
+        }
+      });
+    });
+
+    // --- INITIALIZE ---
+    document.addEventListener("DOMContentLoaded", () => {
+        typeWriter();
     });
   </script>
 </body>
