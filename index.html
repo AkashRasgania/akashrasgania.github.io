@@ -387,9 +387,28 @@
     try {
       const response = await fetch(API_URL);
       const data = await response.json();
+      
       if (data.results && data.results.length > 0) {
         newsContainer.innerHTML = "";
-        data.results.slice(0, 6).forEach(article => {
+        
+        // --- DEDUPLICATION LOGIC START ---
+        const seenTitles = new Set();
+        const uniqueArticles = [];
+
+        data.results.forEach(article => {
+            // Normalize title: remove generic whitespace and handle case sensitivity
+            const normalizedTitle = article.title ? article.title.trim().toLowerCase() : "";
+            
+            // Only add if we haven't seen this title before
+            if (normalizedTitle && !seenTitles.has(normalizedTitle)) {
+                seenTitles.add(normalizedTitle);
+                uniqueArticles.push(article);
+            }
+        });
+        // --- DEDUPLICATION LOGIC END ---
+
+        // Render only the first 6 UNIQUE articles
+        uniqueArticles.slice(0, 6).forEach(article => {
           const card = document.createElement("a");
           card.href = article.link;
           card.target = "_blank";
@@ -444,5 +463,4 @@
   });
 </script>
 </body>
-
 </html>
